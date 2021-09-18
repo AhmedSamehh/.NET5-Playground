@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "jwyUGLpS0AgktvxXf7wsy+7nrn9D0EYIdRGOmiPuNzlz4/cxBw0vHtnYoKxRNeR55ztLtxpxXFmalctpFsH+Ew==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Web\\DotNetCore\\Catalog\\Catalog.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a7med\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\a7med\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\a7med\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\a7med\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\a7med\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\a7med\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
