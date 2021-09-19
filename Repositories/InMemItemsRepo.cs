@@ -5,7 +5,8 @@ using Catalog.Models;
 
 namespace Catalog.Repositories
 {
-    public class InMemItemsRepo
+
+    public class InMemItemsRepo : IItemsRepo
     {
         private readonly List<Item> Items = new()
         {
