@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Catalog.DTOs;
 using Catalog.Models;
 using Catalog.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -16,19 +18,20 @@ namespace Catalog.Controllers
             this.repository = repository;
         }
         [HttpGet]
-        public IEnumerable<Item> GetItems()
+        public IEnumerable<ItemDTO> GetItems()
         {
-            return repository.GetItems();
+            var items =  repository.GetItems().Select(item => item.AsDTO());
+            return items;
         }
         [HttpGet("{id}")]
-        public ActionResult<Item> GetItem(Guid id)
+        public ActionResult<ItemDTO> GetItem(Guid id)
         {
-            Item item =  repository.GetItem(id);
+            var item =  repository.GetItem(id);
             if(item is null)
             {
                 return NotFound();
             }
-            return item;
+            return item.AsDTO();
         }
     }
 }
