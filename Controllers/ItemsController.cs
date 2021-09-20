@@ -33,5 +33,17 @@ namespace Catalog.Controllers
             }
             return item.AsDTO();
         }
+        [HttpPost]
+        public ActionResult<ItemDTO> CreateItem(CreateItemDTO itemDTO)
+        {
+            Item item = new(){
+                Id = Guid.NewGuid(),
+                Name = itemDTO.Name,
+                Price = itemDTO.Price,
+                CreatedDay = DateTimeOffset.UtcNow
+            };
+            repository.CreateItem(item);
+            return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDTO());
+        }
     }
 }

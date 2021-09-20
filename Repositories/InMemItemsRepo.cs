@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Catalog.DTOs;
 using Catalog.Models;
 
 namespace Catalog.Repositories
@@ -8,7 +9,7 @@ namespace Catalog.Repositories
 
     public class InMemItemsRepo : IItemsRepo
     {
-        private readonly List<Item> Items = new()
+        private readonly List<Item> items = new()
         {
             new Item { Id = System.Guid.NewGuid(), Name = "Potion", Price = 9, CreatedDay = DateTimeOffset.UtcNow },
             new Item { Id = System.Guid.NewGuid(), Name = "Iron Sword", Price = 15, CreatedDay = DateTimeOffset.UtcNow },
@@ -17,11 +18,16 @@ namespace Catalog.Repositories
 
         public IEnumerable<Item> GetItems()
         {
-            return Items;
+            return items;
         }
         public Item GetItem(Guid id)
         {
-            return Items.Where(i => i.Id == id).SingleOrDefault();
+            return items.Where(i => i.Id == id).SingleOrDefault();
+        }
+
+        public void CreateItem(Item item)
+        {
+            items.Add(item);
         }
     }
 }
