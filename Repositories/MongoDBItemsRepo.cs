@@ -11,10 +11,12 @@ namespace Catalog.Repositories
         private const string dbName = "catalog";
         private const string collectionName = "items";
         public MongoDBItemsRepo(IMongoClient mongoClient){
+            IMongoDatabase database = mongoClient.GetDatabase(dbName);
+            itemsCollection = database.GetCollection<Item>(collectionName);
         }
         public void CreateItem(Item item)
         {
-            throw new NotImplementedException();
+            itemsCollection.InsertOne(item);
         }
 
         public void DeleteItem(Guid id)
